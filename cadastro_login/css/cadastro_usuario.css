@@ -96,13 +96,13 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
 }
 
 .input-box {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1.1rem;
+    margin-bottom: 0.5rem;
 }
 
 /*Luz de fora nos campos para digitar*/
