@@ -36,9 +36,9 @@ body {
 }
 
 .form-image img {
-    width: 30rem;
-    height: 29rem;
-    box-shadow: 6px 5px 10px #d9ebf5fb;
+    width: 28rem;
+    height: 25rem;
+    box-shadow: 6px 5px 10px #939afdfb;
 }
 
 .form {
@@ -144,6 +144,7 @@ textarea {
 
   textarea:hover {
     background-color: #3e38db18;
+    
 }
 
 textarea:focus-visible {

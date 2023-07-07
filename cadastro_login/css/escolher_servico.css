@@ -64,7 +64,8 @@ header{
 }
 .nav-link:hover{
     color: rgb(255, 255, 255);
-    font-size: 1.16rem;
+    font-size: 1.36rem;
+ 
 }
 
 /*Constumizando botao*/
@@ -75,22 +76,21 @@ header{
     transition: all 0.5s;
     border-radius: 5px;    
 }
-/*aumentando e mudando a cor quando passar o mouse por cima*/
+/* mudando a cor quando passar o mouse por cima*/
 .login-button button:hover{
     background:  #332cb8a8; 
+    transform: scale3d(1.1, 1.1, 1);
+    transition: all 0.3s;
 }
 
 .login-button button a{
     text-decoration: none;
-    color: rgb(232, 232, 231);
+    color: rgb(232, 231, 231);
     font-weight: 400;
-    transition: all 0.5s;
+    transition: all 0.3s;
     font-size: 1.1rem; 
 }
-.login-button button a:hover{
-   color: rgb(255, 255, 255);
-    
-}
+
 
 
 
@@ -176,7 +176,7 @@ header{
   /* Animação Hover mudando de tamanho e cor*/
   .card:hover {
     transform: scale3d(1.1, 1.1, 1);
-    box-shadow: 6px 6px 20px #0058dd;
+    box-shadow: 6px 6px 20px #000cb3;
   }
   
 
@@ -227,6 +227,7 @@ select {
 /*luz de dentro quando clicar acender*/
 .input-box input:hover {
     background-color: #9dc9ec25;
+    
 }
 
 /*acende linhas do campo de digitar*/
