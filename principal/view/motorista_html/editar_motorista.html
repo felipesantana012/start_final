@@ -1,0 +1,135 @@
+<!DOCTYPE html 5>
+<html lang="pt-br"  xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- <link rel="stylesheet" th:href="@{/css/motorista_css/cadastro_motorista.css}">
+    <script th:src="@{/js/motorista_js/cadastro_motorista.js}" defer></script>
+    <img th:src="@{/img/motorista_img/cadastro_motorista.svg}" alt="imagem cadastro-endereco" alt="">
+    -->
+    <link rel="stylesheet" href="/principal/css/motorista_css/editar_motorista.css">
+    <title>Editar Motorista</title>
+</head>
+
+<body>
+    <script src="/principal/js/motorista_js/editar_motorista.js"></script>
+
+
+    <header>
+        <nav class="nav-bar">
+        <div class="logo">
+       <a href="/" class="nav-link"> <h1>Centauri</h1></a>
+        </div>
+        <div class="nav-list">
+    <ul>
+        <li class="nav-item"><a href="#" class="nav-link">Editar Dados</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Editar veiculo</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
+    </ul>
+        </div>
+        <div class="login-button">
+            <button><a href="/">Sair</a></button>  
+        </div>
+    </header>
+    
+    <div class="container">
+
+
+        
+        <div class="form-image">
+            
+             <img src="/principal/img/motorista_img/cadastro_motorista.svg">
+        </div>
+
+        <div class="form">
+            <form action="#">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Editar Dados Motorista</h1>
+                    </div>
+                    
+                </div>
+
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="nome">Nome</label>
+                        <input id="nome" type="text" name="nome" placeholder="Digite seu nome completo" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="cnh">CNH</label>
+                        <input id="cnh" type="text" name="cnh" placeholder="Digite numero da CNH" required>
+                    </div>
+
+
+                    <div class="input-box">
+                        <label for="number">Celular</label>
+                        <input id="number" type="tel" name="number" placeholder="(xx) xxxx-xxxx" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="dataNascimento" class="nome-data">Data Nascimento</label>
+                        <input id="dataNascimento" type="date" name="dataNascimento" class="linha-data">
+                    </div>
+
+                  
+                    <div class="input-box">
+                        <label for="email">E-mail</label>
+                        <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required>
+                    </div>
+
+
+                    <div class="input-box">
+                        <label for="password">Senha</label>
+                        <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
+                    </div>
+
+                    
+                   
+
+                </div>
+                <div class="input-box">
+                <div class="gender-inputs">
+                    <div class="gender-title">
+                        <h6>Sexo</h6>
+                    </div>
+
+                    <div class="gender-group">
+                        <div class="gender-input">
+                            <input id="feminino" type="radio" name="sexo">
+                            <label for="feminino">Feminino</label>
+                        </div>
+
+                        <div class="gender-input">
+                            <input id="masculino" type="radio" name="sexo">
+                            <label for="masculino">Masculino</label>
+                        </div>
+
+                        <div class="gender-input">
+                            <input id="outro" type="radio" name="sexo">
+                            <label for="outro">Outro</label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="continue-button">
+                    <button><a href="#">Salvar</a> </button>
+                </div>
+            </form>
+        </div>
+
+   
+    
+               
+                
+
+                
+          
+    </div>
+</body>
+
+</html>

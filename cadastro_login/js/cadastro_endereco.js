@@ -1,4 +1,6 @@
-const enderecoForm = document.querySelector("#endereco-form");
+function buscarCep() {
+
+
 const cepInput = document.querySelector("#cep");
 const ruaInput = document.querySelector("#rua");
 const numeroInput = document.querySelector("#numero");
@@ -6,7 +8,7 @@ const complementoInput = document.querySelector("#complemento");
 const bairroInput = document.querySelector("#bairro");
 const cidadeInput = document.querySelector("#cidade");
 const estadoInput = document.querySelector("#estado");
-const formInputs = document.querySelector("[data-input]");
+
 
 
 //validação basica do cep
@@ -78,4 +80,4 @@ const toggleDisabled = () => {
 
 };
 
-
+}

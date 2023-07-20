@@ -1,66 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/cadastro_login/css/testando.css">
-  <title>Slide com fotos</title>
+
+    <link rel="stylesheet" href="/cadastro_login/css/testando.css">
+    <title>Solicitação para Motorista</title>
 </head>
+
 <body>
-  <h1>aaaaaaa</h1>
+    <div class="container">
+        <div class="form-image">
+            
+            <img src="/cadastro_login/img/enviar_formulario_motorista.JPG" alt="">
+        </div>
 
-  <div class="slider">
+        <div class="form">
+            <form action="#">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Solicitação de Serviço</h1>
+                    </div>
+                    <div class="login-button">
+                        <button><a href="/cadastro_login/view/login.html">Entrar</a></button>
+                    </div>
+                </div>
 
-  <div class="slides">
-    <!--Butao Radio-->
-    <input type="radio" name="radio-btn" id="radio1" checked>
-    <input type="radio" name="radio-btn" id="radio2">
-    <input type="radio" name="radio-btn" id="radio3">
-    <input type="radio" name="radio-btn" id="radio4">
-    <input type="radio" name="radio-btn" id="radio5">
-    <!--Fim Butao Radio-->
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="nome">Nome</label>
+                        <input id="nome" type="text" name="nome" placeholder="Digite seu nome completo" required>
+                    </div>
 
-    <!--Imagens Slide-->
-    <div class="slide first">
-      <img src="https://www.autossegredos.com.br/wp-content/webp-express/webp-images/uploads/2020/04/Mercedes-Benz-sprinter-516-2-1024x635.jpg.webp" alt="imagem 1">
+                    <div class="input-box">
+                        <label for="number">Celular</label>
+                        <input id="number" type="tel" name="number" placeholder="(xx) xxxx-xxxx" required>
+                    </div>
+
+                  
+                    <div class="input-box">
+                        <label for="saida">Local da saida</label>
+                        <input id="saida" type="text" name="saida" placeholder="Digite onde local de saida" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="chegada">Nome</label>
+                        <input id="chegada" type="text" name="chegada" placeholder="Digite ponto de saida" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="password">Senha</label>
+                        <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
+                    </div>
+
+
+                    <div class="input-box">
+                        <label for="dataNascimento" class="nome-data">Data Nascimento</label>
+                        <input id="dataNascimento" type="date" name="dataNascimento" class="linha-data">
+                    </div>
+
+                </div>
+                <div class="input-box">
+                <div class="gender-inputs">
+                    <div class="gender-title">
+                        <h6>Sexo</h6>
+                    </div>
+
+                    <div class="gender-group">
+                        <div class="gender-input">
+                            <input id="feminino" type="radio" name="sexo">
+                            <label for="feminino">Feminino</label>
+                        </div>
+
+                        <div class="gender-input">
+                            <input id="masculino" type="radio" name="sexo">
+                            <label for="masculino">Masculino</label>
+                        </div>
+
+                        <div class="gender-input">
+                            <input id="outro" type="radio" name="sexo">
+                            <label for="outro">Outro</label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="continue-button">
+                    <button><a href="/cadastro_login/view/cadastro_endereco.html">Continuar</a> </button>
+                </div>
+            </form>
+
+            
+
+
+        </div>
     </div>
 
-    <div class="slide">
-      <img src="https://fotos.jornaldocarro.estadao.com.br/wp-content/uploads/2021/06/11203014/Spri1.jpg" alt="imagem 2">
-    </div>
-
-    <div class="slide">
-      <img src="https://img.freepik.com/vetores-premium/maquete-de-vista-lateral-traseira-de-van-de-carga-branca-de-minivan-branca_711320-15.jpg" alt="imagem 3">
-    </div>
-
-    <div class="slide">
-      <img src="https://s2-autoesporte.glbimg.com/z2MAmk2nlWVMOGBeHZPRE6NPg6s=/0x0:620x400/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_cf9d035bf26b4646b105bd958f32089d/internal_photos/bs/2020/L/9/kzjkEOTMqHVXcAjNIvvg/2014-06-13-mg-7821.jpg" alt="imagem 4">
-    </div>
-
-    <div class="slide">
-      <img src="https://p2.trrsf.com/image/fget/cf/774/0/images.terra.com/2020/04/27/sp2.jpg" alt="imagem 5">
-    </div>
-     <!--Fim Imagens Slide-->
-
-      <!--Navegacao auto-->
-      <div class="navegacao-auto">
-        <div class="auto-btn1"></div>
-        <div class="auto-btn2"></div>
-        <div class="auto-btn3"></div>
-        <div class="auto-btn4"></div>
-        <div class="auto-btn5"></div>
-      </div> 
-  </div>
-
-  <div class="navegacao-manual">
-    <label for="radio1" class="manual-btn"></label>
-    <label for="radio2" class="manual-btn"></label>
-    <label for="radio3" class="manual-btn"></label>
-    <label for="radio4" class="manual-btn"></label>
-    <label for="radio5" class="manual-btn"></label>
-  </div>
-  </div>
-  
-  <script src="/cadastro_login/js/testando.js"></script>
+    
 </body>
+
 </html>

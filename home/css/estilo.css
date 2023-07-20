@@ -1,22 +1,19 @@
-/*Importando Fonte*/
-@import url('https://fonts.googleapis.com/css2?famile=Inter:wght@200;300;400;500;&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Open+Sans:wght@300;400;500;600&display=swap'); 
 
-/*zerando todos os componetes*/
-*{
-    padding: 0%;
-    margin: 0%;
-    font-family: 'Inter' , sans-serif;
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
 }
-
+  
 body{
-    background-color: azure;
-
+    background-color: #d9ebf581;
 }
 
 /*parte de cima da tela*/
 header{
-    background-color: #202e64;;
-    box-shadow: 0px 3px 10px #332cb8;
+    background-color: #202e64;
+
 }
 
 /*posicionar os elementos*/
@@ -34,7 +31,7 @@ header{
 
 /*cor na logo*/
 .logo h1{
-    color: rgba(236, 236, 236, 0.815);
+    color: rgb(232, 232, 231);
 }
 
 /*constumizando o links do menu*/
@@ -60,14 +57,15 @@ header{
 .nav-link{
     text-decoration: none;
     font-size: 1.15rem;
-    color: rgb(190, 190, 190);
+    color: rgb(232, 232, 231);
     transition: all 0.5s;   
     font-weight: 400;
     
 }
 .nav-link:hover{
     color: rgb(255, 255, 255);
-    font-size: 1.16rem;
+    font-size: 1.36rem;
+ 
 }
 
 /*Constumizando botao*/
@@ -76,26 +74,19 @@ header{
     background-color:  #332cb8;;
     padding: 10px 15px;
     transition: all 0.5s;
-    border-radius: 5px;
-    
+    border-radius: 5px;    
 }
-/*aumentando e mudando a cor quando passar o mouse por cima*/
+/* mudando a cor quando passar o mouse por cima*/
 .login-button button:hover{
-    background:  #332cb8a8;
-    
+    background:  #332cb8a8; 
+    transform: scale3d(1.1, 1.1, 1);
+    transition: all 0.3s;
 }
 
-/*mudando cor do link do botao*/
 .login-button button a{
     text-decoration: none;
-    color: rgb(190, 190, 190);
+    color: rgb(232, 231, 231);
     font-weight: 400;
-    transition: all 0.5s;
+    transition: all 0.3s;
     font-size: 1.1rem; 
 }
-
-.login-button button a:hover{
-   color: rgb(255, 255, 255);
-    
-}
-
