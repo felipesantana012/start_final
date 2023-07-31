@@ -4,11 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" th:href="@{/css/servico_css/form_solicitacao_servico.css}">>
+    <link rel="stylesheet" th:href="@{/css/servico_css/form_solicitacao_servico.css}">
+    <link rel="stylesheet" href="/principal/css/servico_css/form_solicitacao_servico.css">
     <title>Envio de Solicitação para Motorista</title>
     <script th:src="@{/js/servico_css/form_solicitacao_servico.js}" defer></script>
 </head>
 <body>
+
+    <script src="/principal/js/servico_js/calcular_distancia.js"></script>
+    <script src="/principal/js/servico_js/form_solicitacao_servico.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMROG67dMisX221hCQHTg-BOqFwCz3ASM&libraries=geometry&callback=initMap" async defer></script>
+
+    <header>
+        <nav class="nav-bar">
+        <div class="logo">
+       <a href="/" class="nav-link"> <h1>Centauri</h1></a>
+        </div>
+        <div class="nav-list">
+    <ul>
+        <li class="nav-item"><a href="#" class="nav-link">Editar Dados</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
+    </ul>
+        </div>
+        <div class="login-button">
+            <button><a href="/">Sair</a></button>  
+        </div>
+    </header>
+
     <div class="box">
         <form action="">
             <fieldset>
@@ -32,11 +54,14 @@
 
                 <div class="input-group">
                 <label for="endereco-partida"><b>Endereço de Partida</b></label>
-                <br><br>
+                <br><br><br>
+
+            <form id="endereco-form">
 
                 <div class="inputBox">
-                    <input type="text" name="cep" id="cep" class="inputUser" required onkeyup="buscarCepPartida()">
+                    <input type="text" name="cep" id="cep" class="inputUser" required onkeyup="buscarCepPartida()" maxlength="8">
                     <label for="cep" class="labelInput">Cep</label>
+                    <div id="mensagemErro"></div>
                 </div>
                 <br><br>
 
@@ -63,14 +88,15 @@
                     <label for="complemento" class="labelInput">Complemento / Referencia</label>
                 </div>
                 <br><br><br>
-
+            </form>
                 <div class="input-group">
                     <label ><b>Endereço de Chegada</b></label>
                 </div>
                 <br>
+                <br>
                 <div class="inputBox">
-                    <input type="text" name="cep" id="cep-chegada" class="inputUser" required onkeyup="buscarCepChegada()">
-                    <label for="cep" class="labelInput">Cep</label>
+                    <input type="text" name="cep" id="cep2" class="inputUser" required onkeyup="buscarCepChegada();calcularDistancia()" maxlength="8">
+                    <label for="cep2" class="labelInput">Cep</label>
                 </div>
                 <br><br>
 
@@ -94,43 +120,54 @@
 
                 <div class="inputBox">
                     <input type="text" name="complemento" id="complemento-chegada" class="inputUser" required disabled>
-                    <label for="complemento" class="labelInput">Complemento / Referencia</label>
+                    <label for="complemento" class="labelDesabilitado">Complemento / Referencia</label>
                 </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="text" name="resultado" id="resultado" class="inputUser" required  readonly disabled>
+                    <label for="" class="labelDesabilitado">Distancia Total:</label>
+                  </div>
+            
+        
                 <br><br><br>
                 
 
                 <div class="input-group">
                     <label ><b>Informaçõe Motorista / Veiculo</b></label>
                 </div>
-                <br>
+                <br><br><br>
 
                 <div class="inputBox">
                     <input type="text" name="nome" id="nome" class="inputUser" required disabled>
-                    <label for="nome" class="labelInput">Nome Motorista</label>
+                    <label for="nome" class="labelDesabilitado">Nome Motorista</label>
                 </div>
                 <br><br>
 
                 <div class="inputBox">
                     <input type="text" name="veiculo" id="veiculo" class="inputUser" required disabled>
-                    <label for="veiculo" class="labelInput">Veiculo</label>
+                    <label for="veiculo" class="labelDesabilitado">Veiculo</label>
                 </div>
                 <br><br>
                 
 
                 <div class="inputBox">
-                    <input type="text" name="servico" id="servico" class="inputUser" required onblur="ocultar_servico()" >
-                    <label for="servico" class="labelInput">Servico</label>
+                    <input type="text" name="servico" id="servico" class="inputUser" required disabled >
+                    <label for="servico" class="labelDesabilitado">Servico</label>
                 </div>
                 <br><br>
 
                 <div class="inputBox">
-                    <input type="text" name="teste" id="teste" class="inputUser" required onblur="ocultar_servico()" disabled >    
+                    <input type="text" name="capacidade" id="capacidade" class="inputUser" required onblur="ocultar_servico()" disabled>
+                    <label for="capacidade" class="labelDesabilitado">Capacidade</label>
                 </div>
+                <br><br>
+
+             
             
                 <div class="inputBox"> 
                     <div id="lugar" style="display: none;" onblur="ocultar_servico()">
                     <input type="text" name="lugar" id="lugar" class="inputUser" required disabled >
-                    <label for="lugar" class="labelInput">Max Lugares</label>
+                    <label for="lugar" class="labelDesabilitado">Max Lugares</label>
                     </div>
                 </div>
 
@@ -138,7 +175,7 @@
                 <div class="inputBox">
                     <div id="kg" style="display: none;" onblur="ocultar_servico()">
                     <input type="text" name="kg" id="kg" class="inputUser" required disabled>
-                    <label for="kg" class="labelInput" >Max KG</label>
+                    <label for="kg" class="labelDesabilitado" >Max KG</label>
                     </div>
                 </div>
 
@@ -146,7 +183,7 @@
                 <div class="inputBox" >
                     <div id="litro" style="display: none;" onblur="ocultar_servico()" >
                     <input type="text" name="litro" id="litro" class="inputUser" required disabled>
-                    <label for="litro" class="labelInput" >Max Litros</label>
+                    <label for="litro" class="labelDesabilitado" >Max Litros</label>
                     </div>
                 </div>
                 <br><br>
@@ -154,7 +191,10 @@
 
             <button type="submit" name="submit" id="submit"> Enviar</button>
             </fieldset>
+            
         </form>
+        
     </div>
+   
 </body>
 </html>

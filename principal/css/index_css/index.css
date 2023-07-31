@@ -30,6 +30,38 @@ header{
     align-items: center;
 }
 
+.nav-list{
+  display: flex;
+  align-items: center;
+}
+
+/*colocando certo um do lado do outro*/
+.nav-list ul{
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+/*colocando espaço entre itens*/
+.nav-item{
+  margin: 0 15px;
+}
+
+/*editando fonte*/
+.nav-link{
+  text-decoration: none;
+  font-size: 1.15rem;
+  color: rgb(232, 232, 231);
+  transition: all 0.5s;   
+  font-weight: 400;
+  
+}
+.nav-link:hover{
+  color: rgb(255, 255, 255);
+  font-size: 1.36rem;
+
+}
+
 /*editando fonte*/
 .nav-link{
     text-decoration: none;
