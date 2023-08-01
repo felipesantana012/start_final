@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Enviar pelo WhatsApp</title>
+</head>
+<body>
+  <form action="" id="solicitacao-form">
+<fieldset>
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required>
+
+    <label for="data-servico">Data do Serviço:</label>
+    <input type="date" id="data-servico" name="data-servico" required>
+
+    <label for="horario">Horário:</label>
+    <input type="time" id="horario" name="horario" required>
+
+    <label for="valor">Valor:</label>
+    <input type="text" id="valor" name="valor" required>
+
+    <button type="submit">Enviar pelo WhatsApp</button>
+</fieldset>
+  </form>
+
+  <script>
+    // Função para enviar os dados do formulário pelo WhatsApp
+    function enviarFormularioWhatsApp() {
+      const nome = document.getElementById('nome').value;
+      const dataServico = document.getElementById('data-servico').value;
+      const horario = document.getElementById('horario').value;
+      const valor = document.getElementById('valor').value;
+
+      // Construir a mensagem para o WhatsApp com os parâmetros
+      const mensagem = `
+Nome: ${nome}
+Data do Serviço: ${dataServico}
+Horário: ${horario}
+Valor: ${valor}
+`;
+
+      // Substitua 'NUMERO_DE_TELEFONE' pelo número de telefone para onde você deseja enviar a mensagem via WhatsApp
+      const numeroTelefone = '5581984910097';
+      const encodedMessage = encodeURIComponent(mensagem);
+      const whatsappURL = `https://wa.me/${numeroTelefone}/?text=${encodedMessage}`;
+
+      // Redirecionar para o link do WhatsApp
+      window.open(whatsappURL, "_blank");
+    }
+
+    // Adicionar o evento de submit ao formulário
+    const formularioWhatsApp = document.getElementById("solicitacao-form");
+    formularioWhatsApp.addEventListener("submit", function (event) {
+      event.preventDefault();
+      enviarFormularioWhatsApp();
+    });
+  </script>
+</body>
+</html>
